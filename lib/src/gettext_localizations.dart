@@ -7,7 +7,8 @@ class GettextLocalizations {
   final _gt = Gettext(
     onWarning: ((message) {
       if (kDebugMode) {
-        final r = RegExp(r'^No translation was found for msgid "(.*)" in msgctxt "(.*)" and domain "(.*)"$');
+        final r = RegExp(
+            r'^No translation was found for msgid "(.*)" in msgctxt "(.*)" and domain "(.*)"$');
         final matches = r.firstMatch(message);
         var msgid = matches!.group(1);
         // ignore: avoid_print
@@ -20,7 +21,8 @@ class GettextLocalizations {
     _gt.addLocale(gettext_parser.po.parse(poContent));
   }
 
-  static GettextLocalizations of(BuildContext context) => Localizations.of<GettextLocalizations>(context, GettextLocalizations)!;
+  static GettextLocalizations of(BuildContext context) =>
+      Localizations.of<GettextLocalizations>(context, GettextLocalizations)!;
 
   String t(String key, List<Object>? args) {
     var message = _gt.gettext(key);

@@ -1,7 +1,7 @@
 name: gettext_i18n
 description: This package helps internationalizing a Flutter application.
-version: 1.0.0
-homepage: 
+version: 1.0.1
+repository: https://github.com/frenchguych/gettext_i18n
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
