@@ -23,8 +23,12 @@ class GettextLocalizationsDelegate
         poContent = await rootBundle
             .loadString('assets/i18n/${locale.languageCode}.po');
       } catch (e) {
-        poContent =
-            await rootBundle.loadString('assets/i18n/$defaultLanguage.po');
+        try {
+          poContent =
+              await rootBundle.loadString('assets/i18n/$defaultLanguage.po');
+        } catch (e) {
+          // Ignore error, default strings will be used.
+        }
       }
     }
 
