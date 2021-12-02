@@ -10,7 +10,14 @@ It is based on [gettext](https://pub.dev/packages/gettext) and [gettext_parser](
 
 ## Usage
 
-In `pubspec.yaml`, add `assets/i18n/` as an asset folder :
+Add this package, and flutter_localizations, to pubspec.yaml:
+
+```shell
+flutter pub add gettext_i18n
+flutter pub add flutter_localizations --sdk=flutter
+```
+
+In `pubspec.yaml`, add `assets/i18n/` as an asset folder:
 
 ```yaml
 flutter:
@@ -18,7 +25,7 @@ flutter:
     - assets/i18n/
 ```
 
-In that folder, place your translation files : 
+Optionnal: in that folder, place your translation files:
 ```shell
 $ ls assets/i18n/
 en.po
@@ -26,7 +33,7 @@ fr_CH.po
 fr.po
 ```
 
-In your application file, declare supported locales, and initialize translations :
+In your application file, declare supported locales, and initialize translations:
 
 ```dart
 class MyApp extends StatelessWidget {
