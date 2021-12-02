@@ -32,6 +32,10 @@ class GettextLocalizationsDelegate
       }
     }
 
+    if (poContent == '') {
+      poContent = 'msgid ""\nmsgstr ""\n"Language: $defaultLanguage\\n"\n';
+    }
+
     return GettextLocalizations.fromPO(poContent);
   }
 
