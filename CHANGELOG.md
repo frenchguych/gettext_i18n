@@ -1,3 +1,7 @@
+## 1.0.5
+
+* Fixed: the `.t` extension method on `BuildContext` is now returning a `String` instead of a `dynamic`.
+
 ## 1.0.4
 
 * Fixed: use an empty, fake, .po file when the default language is not found.
