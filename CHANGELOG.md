@@ -1,3 +1,8 @@
+## 1.0.6
+
+* Feat : made is possible to throw an exception if a message is not found in the translation file.
+* Feat : upgraded minimum flutter and sdk versions.
+
 ## 1.0.5
 
 * Fixed: the `.t` extension method on `BuildContext` is now returning a `String` instead of a `dynamic`.
