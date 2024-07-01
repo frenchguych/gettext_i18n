@@ -1,3 +1,7 @@
+## 1.0.7
+
+* Feat : export GettextLocalizations
+
 ## 1.0.6
 
 * Feat : made is possible to throw an exception if a message is not found in the translation file.
