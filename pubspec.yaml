@@ -1,11 +1,11 @@
 name: gettext_i18n
 description: This package helps internationalizing a Flutter application.
-version: 1.0.5
+version: 1.0.6
 repository: https://github.com/frenchguych/gettext_i18n
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.17.0"
+  flutter: "3.22.0"
+  sdk: ">=3.2.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -15,6 +15,7 @@ dependencies:
     version: ^0.0.0
   gettext: ^1.2.0
   gettext_parser: ^0.2.0
+  yaml: ^3.1.2
 
 dev_dependencies:
   flutter_test:
