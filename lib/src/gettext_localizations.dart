@@ -4,17 +4,20 @@ import 'package:gettext/gettext.dart';
 import 'package:gettext_parser/gettext_parser.dart' as gettext_parser;
 
 class GettextLocalizations {
-  final _gt = Gettext(
-    onWarning: ((message) {
-      if (kDebugMode) {
-        final r = RegExp(
-            r'^No translation was found for msgid "(.*)" in msgctxt "(.*)" and domain "(.*)"$');
-        final matches = r.firstMatch(message);
-        var msgid = matches!.group(1);
-        // ignore: avoid_print
-        print('\nmsgid "$msgid"\nmsgstr ""\n \n');
+  static var throwException = false;
+
+  static void onWarning(String message) {
+    if (kDebugMode) {
+      if (throwException) {
+        throw Exception(message);
+      } else {
+        debugPrint(message);
       }
-    }),
+    }
+  }
+
+  final _gt = Gettext(
+    onWarning: GettextLocalizations.onWarning,
   );
 
   GettextLocalizations.fromPO(String poContent) {
@@ -34,5 +37,9 @@ class GettextLocalizations {
     }
 
     return message;
+  }
+
+  void enableExceptions(bool enable) {
+    throwException = enable;
   }
 }
